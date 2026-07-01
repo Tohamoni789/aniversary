@@ -1,427 +1,220 @@
-/* ==========================
-   Happy Anniversary
-   style.css
-========================== */
+/* ==========================================
+   Happy Anniversary ❤️
+   script.js
+========================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+const loading = document.getElementById("loading");
+const main = document.getElementById("main");
 
-html{
-    scroll-behavior:smooth;
-}
+const startBtn = document.getElementById("startBtn");
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#fff7f7,#ffe8ec,#fff4df);
-    overflow-x:hidden;
-    color:#333;
-}
+const envelopeSection = document.getElementById("envelopeSection");
+const openEnvelope = document.getElementById("openEnvelope");
+const envelope = document.getElementById("envelope");
 
-/* ================= Loading ================= */
+const funnySection = document.getElementById("funnySection");
+const yesBtn = document.getElementById("yesBtn");
+const funnyText = document.getElementById("funnyText");
 
-#loading{
-    position:fixed;
-    inset:0;
-    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    z-index:9999;
-}
+const letterSection = document.getElementById("letterSection");
+const typing = document.getElementById("typing");
+const nextGallery = document.getElementById("nextGallery");
 
-#loading h1{
-    font-size:42px;
-    margin-top:20px;
-}
+/* -----------------------------
+   Loading
+----------------------------- */
 
-#loading p{
-    margin-top:15px;
-    opacity:.9;
-}
+setTimeout(() => {
 
-#loading h2{
-    margin-top:8px;
-    font-weight:600;
-}
+    loading.style.display = "none";
+    main.classList.remove("hidden");
 
-.heart{
-    font-size:70px;
-    animation:heartbeat 1s infinite;
-}
+}, 2500);
 
-@keyframes heartbeat{
+/* -----------------------------
+   Start
+----------------------------- */
 
-0%{
-transform:scale(1);
-}
+startBtn.onclick = () => {
 
-50%{
-transform:scale(1.18);
-}
+    document.querySelector(".welcome").style.display = "none";
 
-100%{
-transform:scale(1);
-}
+    envelopeSection.classList.remove("hidden");
 
-}
+};
 
-/* ================= Common ================= */
+/* -----------------------------
+   Envelope Open
+----------------------------- */
 
-.hidden{
-    display:none;
-}
+openEnvelope.onclick = () => {
 
-section{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:30px;
-}
+    envelope.classList.add("open");
 
-/* ================= Welcome ================= */
+    openEnvelope.style.display = "none";
 
-.welcome h1{
+    setTimeout(() => {
 
-font-family:'Dancing Script',cursive;
+        envelopeSection.classList.add("hidden");
 
-font-size:58px;
+        funnySection.classList.remove("hidden");
 
-color:#d6336c;
+    }, 1800);
+
+};
+
+/* -----------------------------
+   Funny Button
+----------------------------- */
+
+const funnyMessages = [
+
+"😜 এত সহজে না!",
+"🤭 আরেকবার চেষ্টা করো!",
+"😂 Almost!",
+"❤️ আচ্ছা... এবার পারো।"
+
+];
+
+let moveCount = 0;
+
+function moveButton() {
+
+    if (moveCount >= 4) return;
+
+    const x = Math.random() * 220 - 110;
+    const y = Math.random() * 140 - 70;
+
+    yesBtn.style.transform = `translate(${x}px, ${y}px)`;
+
+    funnyText.innerHTML = funnyMessages[moveCount];
+
+    moveCount++;
 
 }
 
-.welcome p{
+/* Desktop */
 
-margin:20px;
+yesBtn.addEventListener("mouseenter", moveButton);
 
-font-size:22px;
+/* Mobile */
 
-letter-spacing:3px;
+yesBtn.addEventListener("touchstart", function(e){
 
-}
+    if(moveCount < 4){
 
-button{
+        e.preventDefault();
 
-padding:15px 35px;
+        moveButton();
 
-border:none;
+    }
 
-border-radius:50px;
+});
 
-background:#d6336c;
+/* Finally allow click */
 
-color:white;
+yesBtn.addEventListener("click", function(){
 
-font-size:18px;
+    if(moveCount < 4) return;
 
-cursor:pointer;
+    funnySection.classList.add("hidden");
 
-transition:.35s;
+    letterSection.classList.remove("hidden");
 
-box-shadow:0 8px 20px rgba(0,0,0,.2);
+    typeWriter();
 
-}
+});
 
-button:hover{
+/* -----------------------------
+   Letter
+----------------------------- */
 
-transform:translateY(-3px);
+const letter = `
 
-}
+আচ্ছা...
 
-button:active{
+এত কষ্ট করে খুললে,
+এখন আর বন্ধ করা যাবে না। 😜❤️
 
-transform:scale(.97);
 
-}
+আমার সবচেয়ে প্রিয় মানুষ,
 
-/* ================= Envelope ================= */
+তীর্থ,
 
-#envelope{
+(আমার গুলগুলির বাবা ❤️)
 
-position:relative;
 
-width:320px;
+আজ আমাদের প্রথম বিবাহবার্ষিকী।
 
-height:220px;
+৪ জুলাই ২০২৫...
 
-margin-bottom:30px;
+সেদিন আমি শুধু বিয়ে করিনি,
 
-background:#b22222;
+আমি আমার সবচেয়ে আপন মানুষটাকে পেয়েছিলাম।
 
-border-radius:12px;
 
-overflow:hidden;
+হয়তো আমাদের মাঝে
+অভিমান হয়েছে,
 
-box-shadow:0 15px 30px rgba(0,0,0,.25);
+ঝগড়াও হয়েছে,
 
-}
+কিন্তু একটা জিনিস
+কখনো বদলায়নি...
 
-.top{
 
-position:absolute;
+আমি প্রতিদিন
+নতুন করে তোমাকেই
+ভালোবাসি। ❤️
 
-width:100%;
 
-height:120px;
+ধন্যবাদ...
 
-background:#9b1d1d;
+আমার পাশে থাকার জন্য।
 
-clip-path:polygon(0 0,100% 0,50% 100%);
+আমার হাসির কারণ হওয়ার জন্য।
 
-transform-origin:top;
+আমার মানুষ হওয়ার জন্য। ❤️
 
-transition:1s;
 
-z-index:5;
+Happy 1st Anniversary
 
-}
 
-.letter{
+Forever Yours,
 
-position:absolute;
+❤️
 
-left:15px;
+তোহামনি
 
-bottom:-240px;
+`;
 
-width:290px;
+let i = 0;
 
-height:370px;
+function typeWriter(){
 
-transition:1.3s;
+    if(i < letter.length){
 
-z-index:2;
+        typing.innerHTML += letter.charAt(i);
 
-}
+        i++;
 
-.paper{
+        setTimeout(typeWriter,35);
 
-background:#fffdf8;
+    }
 
-height:100%;
+    else{
 
-border-radius:10px;
+        nextGallery.style.display = "inline-block";
 
-padding:25px;
-
-box-shadow:0 8px 20px rgba(0,0,0,.2);
+    }
 
 }
 
-.paper h2{
+/* -----------------------------
+   Next (Part-3)
+----------------------------- */
 
-font-size:38px;
+nextGallery.onclick = () => {
 
-margin-bottom:15px;
+    alert("📸 Gallery Part আসবে পরের ধাপে ❤️");
 
-}
-
-.paper h3{
-
-font-family:'Dancing Script',cursive;
-
-font-size:34px;
-
-color:#d6336c;
-
-margin-bottom:20px;
-
-}
-
-.paper p{
-
-margin-top:10px;
-
-font-size:20px;
-
-}
-
-/* JS adds this class */
-
-#envelope.open .top{
-
-transform:rotateX(180deg);
-
-}
-
-#envelope.open .letter{
-
-bottom:20px;
-
-}
-
-/* ================= Funny Section ================= */
-
-#funnySection h2{
-
-font-size:34px;
-
-margin-bottom:20px;
-
-color:#d6336c;
-
-}
-
-#funnySection p{
-
-font-size:20px;
-
-margin:10px;
-
-}
-
-#yesBtn{
-
-position:relative;
-
-transition:.3s;
-
-}
-
-#funnyText{
-
-margin-top:25px;
-
-font-size:22px;
-
-font-weight:600;
-
-color:#b22222;
-
-height:40px;
-
-}
-
-/* ================= Letter ================= */
-
-.realLetter{
-
-width:92%;
-
-max-width:700px;
-
-background:white;
-
-padding:40px;
-
-border-radius:15px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.18);
-
-}
-
-.realLetter h1{
-
-font-family:'Dancing Script',cursive;
-
-font-size:54px;
-
-color:#d6336c;
-
-margin-bottom:25px;
-
-}
-
-#typing{
-
-font-size:20px;
-
-line-height:2;
-
-white-space:pre-wrap;
-
-text-align:left;
-
-min-height:300px;
-
-}
-
-#nextGallery{
-
-margin-top:35px;
-
-display:none;
-
-}
-
-/* ================= Mobile ================= */
-
-@media(max-width:768px){
-
-.welcome h1{
-
-font-size:42px;
-
-}
-
-#loading h1{
-
-font-size:34px;
-
-}
-
-#envelope{
-
-width:280px;
-
-height:190px;
-
-}
-
-.letter{
-
-width:250px;
-
-height:340px;
-
-left:15px;
-
-}
-
-.paper h3{
-
-font-size:28px;
-
-}
-
-.paper p{
-
-font-size:18px;
-
-}
-
-.realLetter{
-
-padding:25px;
-
-}
-
-.realLetter h1{
-
-font-size:42px;
-
-}
-
-#typing{
-
-font-size:18px;
-
-}
-
-button{
-
-font-size:16px;
-
-padding:14px 28px;
-
-}
-
-}
+};
