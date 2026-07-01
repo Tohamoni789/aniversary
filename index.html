@@ -1,14 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy 1st Anniversary ❤️</title>
-
-<link rel="stylesheet" href="style.css">
+<title>Happy Anniversary ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Poppins,sans-serif;
+
+background:linear-gradient(135deg,#fff0f5,#ffe7e7,#fff8ef);
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+}
+
+.hidden{
+
+display:none;
+
+}
+
+#loading{
+
+position:fixed;
+
+inset:0;
+
+background:#ffcad4;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+z-index:999;
+
+}
+
+#loading h1{
+
+font-size:40px;
+
+margin-top:20px;
+
+}
+
+.heart{
+
+font-size:70px;
+
+animation:beat 1s infinite;
+
+}
+
+@keyframes beat{
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+.container{
+
+text-align:center;
+
+}
+
+.envelope{
+
+position:relative;
+
+width:320px;
+
+height:210px;
+
+background:#b22222;
+
+border-radius:10px;
+
+box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+overflow:hidden;
+
+margin:auto;
+
+}
+
+.top{
+
+position:absolute;
+
+width:100%;
+
+height:120px;
+
+background:#8f1111;
+
+clip-path:polygon(0 0,100% 0,50% 100%);
+
+transform-origin:top;
+
+transition:1s;
+
+z-index:5;
+
+}
+
+.letter{
+
+position:absolute;
+
+left:15px;
+
+bottom:-260px;
+
+width:290px;
+
+height:360px;
+
+background:#fffef9;
+
+border-radius:10px;
+
+padding:20px;
+
+transition:1.3s;
+
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+}
+
+.envelope.open .top{
+
+transform:rotateX(180deg);
+
+}
+
+.envelope.open .letter{
+
+bottom:20px;
+
+}
+
+button{
+
+margin-top:25px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:40px;
+
+background:#d6336c;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+}
+
+#yesBtn{
+
+position:relative;
+
+transition:.3s;
+
+}
+
+#funnyText{
+
+margin-top:20px;
+
+font-size:22px;
+
+color:#b22222;
+
+height:35px;
+
+}
+
+#typing{
+
+white-space:pre-wrap;
+
+line-height:1.8;
+
+text-align:left;
+
+margin-top:20px;
+
+max-width:650px;
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+display:none;
+
+}
+
+</style>
 
 </head>
 
@@ -26,29 +255,13 @@
 
 </div>
 
-<div id="main" class="hidden">
+<div class="container hidden" id="main">
 
-<section class="welcome">
-
-<h1>Happy 1st Anniversary ❤️</h1>
-
-<p>04 • 07 • 2025</p>
-
-<button id="startBtn">
-Open Your Surprise
-</button>
-
-</section>
-
-<section id="envelopeSection" class="hidden">
-
-<div id="envelope">
+<div class="envelope" id="envelope">
 
 <div class="top"></div>
 
-<div class="letter" id="letter">
-
-<div class="paper">
+<div class="letter">
 
 <h2>💌</h2>
 
@@ -62,47 +275,216 @@ Open Your Surprise
 
 </div>
 
-</div>
+<button id="openBtn">
 
-<button id="openEnvelope">
 Open Letter ❤️
+
 </button>
 
-</section>
+<div id="question" class="hidden">
 
-<section id="funnySection" class="hidden">
+<h2>
 
-<h2>Before opening...</h2>
+Do you really want to know
 
-<p>Do you really want to know what is inside? 😏</p>
+what's inside? 😏
+
+</h2>
 
 <button id="yesBtn">
+
 Yes ❤️
+
 </button>
 
 <p id="funnyText"></p>
 
-</section>
-
-<section id="letterSection" class="hidden">
-
-<div class="realLetter">
-
-<h1>My Love ❤️</h1>
+</div>
 
 <div id="typing"></div>
+<script>
 
-</div>
+const loading=document.getElementById("loading");
 
-<button id="nextGallery">
-Continue ❤️
-</button>
+const main=document.getElementById("main");
 
-</section>
+setTimeout(()=>{
 
-</div>
+loading.style.display="none";
 
-<script src="script.js"></script>
+main.classList.remove("hidden");
+
+},2500);
+
+const openBtn=document.getElementById("openBtn");
+
+const envelope=document.getElementById("envelope");
+
+const question=document.getElementById("question");
+
+openBtn.onclick=()=>{
+
+envelope.classList.add("open");
+
+openBtn.style.display="none";
+
+setTimeout(()=>{
+
+question.classList.remove("hidden");
+
+},1500);
+
+};
+
+const yesBtn=document.getElementById("yesBtn");
+
+const funnyText=document.getElementById("funnyText");
+
+let count=0;
+
+const texts=[
+
+"😜 এত সহজে না!",
+
+"🤭 আরেকবার চেষ্টা করো!",
+
+"😂 এখনও না!",
+
+"❤️ আচ্ছা... এবার খুলছি..."
+
+];
+
+function moveButton(){
+
+if(count>=4)return;
+
+let x=Math.random()*260-130;
+
+let y=Math.random()*160-80;
+
+yesBtn.style.transform=`translate(${x}px,${y}px)`;
+
+funnyText.innerHTML=texts[count];
+
+count++;
+
+}
+
+yesBtn.addEventListener("mouseenter",moveButton);
+
+yesBtn.addEventListener("touchstart",(e)=>{
+
+if(count<4){
+
+e.preventDefault();
+
+moveButton();
+
+}
+
+});
+
+const typing=document.getElementById("typing");
+
+const letter=`
+
+আচ্ছা...
+
+এত কষ্ট করে খুললে...
+
+এখন আর বন্ধ করা যাবে না 😜❤️
+
+
+আমার সবচেয়ে প্রিয় মানুষ,
+
+তীর্থ...
+
+আমার গুলগুলির বাবা ❤️
+
+
+আজ আমাদের প্রথম বিবাহবার্ষিকী।
+
+৪ জুলাই ২০২৫...
+
+জানো...
+
+আমি কখনো Perfect Husband চাইনি।
+
+আমি এমন একজন মানুষ চেয়েছিলাম,
+
+যার পাশে আমি
+
+হাসতে পারি,
+
+কাঁদতে পারি,
+
+রাগ করতে পারি,
+
+আবার সব ভুলে জড়িয়ে ধরতে পারি।
+
+সেই মানুষটা তুমি। ❤️
+
+
+হয়তো আমরা মাঝে মাঝে ঝগড়া করি...
+
+হয়তো অভিমানও করি...
+
+কিন্তু দিনের শেষে...
+
+আমার পৃথিবীটা
+
+তোমাকেই ঘিরে। ❤️
+
+
+Happy Anniversary
+
+My Love ❤️
+
+
+Forever Yours,
+
+তোহামনি ❤️
+
+`;
+
+function typeWriter(){
+
+typing.style.display="block";
+
+let i=0;
+
+let speed=35;
+
+function write(){
+
+if(i<letter.length){
+
+typing.innerHTML+=letter.charAt(i);
+
+i++;
+
+setTimeout(write,speed);
+
+}
+
+}
+
+write();
+
+}
+
+yesBtn.addEventListener("click",()=>{
+
+if(count<4)return;
+
+question.style.display="none";
+
+typeWriter();
+
+});
+
+</script>
 
 </body>
+
 </html>
