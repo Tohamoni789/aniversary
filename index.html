@@ -373,27 +373,29 @@ let i=0;
 
 function typeWriter(){
 
-letterCard.style.display="block";
+    letterCard.style.display="block";
 
-function write(){
+    function write(){
 
-if(i<letter.length){
+        if(i<letter.length){
 
-typing.innerHTML+=letter.charAt(i);
+            typing.innerHTML+=letter.charAt(i);
 
-i++;
+            i++;
 
-setTimeout(write,35);
+            setTimeout(write,35);
 
-}else{
+        }else{
 
-setTimeout(showFinalScreen,1500);
+            setTimeout(showFinalScreen,1500);
 
-}
+        }
 
-}
+    }
 
-write();
+    write();
+
+
 
 }
 
