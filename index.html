@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy 1st Anniversary ❤️</title>
 
@@ -20,7 +20,7 @@ box-sizing:border-box;
 
 body{
 font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#fff0f5,#ffe9ec,#fff8f2);
+background:linear-gradient(135deg,#fff0f5,#ffe6ef,#fffaf5);
 height:100vh;
 overflow:hidden;
 display:flex;
@@ -66,9 +66,11 @@ animation:beat 1s infinite;
 }
 
 @keyframes beat{
+
 50%{
 transform:scale(1.2);
 }
+
 }
 
 #loading h1{
@@ -76,16 +78,12 @@ margin-top:20px;
 font-size:42px;
 }
 
-#loading h2{
-margin-top:10px;
-}
-
 .container{
-width:100%;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+width:100%;
 }
 
 #envelope{
@@ -95,7 +93,7 @@ height:220px;
 background:#b22222;
 border-radius:12px;
 overflow:hidden;
-box-shadow:0 15px 35px rgba(0,0,0,.25);
+box-shadow:0 18px 35px rgba(0,0,0,.25);
 }
 
 #flap{
@@ -115,28 +113,27 @@ left:20px;
 bottom:-300px;
 width:300px;
 height:390px;
-background:#fff;
+background:white;
 border-radius:12px;
 padding:25px;
 transition:1.4s;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
+box-shadow:0 10px 20px rgba(0,0,0,.2);
 }
 
 #paper h2{
 font-size:34px;
-margin-bottom:15px;
 }
 
 #paper h3{
 font-family:'Dancing Script',cursive;
 font-size:34px;
 color:#d6336c;
-margin-bottom:10px;
+margin:12px 0;
 }
 
 #paper p{
 font-size:20px;
-margin-top:10px;
+margin-top:8px;
 }
 
 .open #flap{
@@ -177,7 +174,7 @@ max-width:760px;
 background:#fff;
 padding:35px;
 border-radius:18px;
-box-shadow:0 12px 25px rgba(0,0,0,.18);
+box-shadow:0 15px 30px rgba(0,0,0,.18);
 margin-top:25px;
 }
 
@@ -195,28 +192,6 @@ font-size:19px;
 text-align:left;
 }
 
-@media(max-width:768px){
-
-#envelope{
-width:300px;
-height:200px;
-}
-
-#paper{
-width:260px;
-left:20px;
-}
-
-#letterCard{
-padding:22px;
-}
-
-#letterCard h1{
-font-size:40px;
-}
-
-}
-
 </style>
 
 </head>
@@ -231,7 +206,7 @@ font-size:40px;
 
 <p>Only For</p>
 
-<h2>Thirtha</h2>
+<h2>Thirtha ❤️</h2>
 
 </div>
 
@@ -247,7 +222,7 @@ font-size:40px;
 
 <h3>To My Favourite Human</h3>
 
-<p>Thirtha</p>
+<p>Thirthta</p>
 
 <p>(Gulgulir Baba ❤️)</p>
 
@@ -286,16 +261,14 @@ YES ❤️
 <h1>My Love ❤️</h1>
 
 <div id="typing"></div>
-
-</div>
-<script>
-
 const loading=document.getElementById("loading");
 const main=document.getElementById("main");
 
 setTimeout(()=>{
+
 loading.style.display="none";
 main.classList.remove("hidden");
+
 },2500);
 
 const envelope=document.getElementById("envelope");
@@ -309,8 +282,10 @@ envelope.classList.add("open");
 openBtn.style.display="none";
 
 setTimeout(()=>{
+
 question.classList.remove("hidden");
-},1800);
+
+},1700);
 
 };
 
@@ -318,21 +293,23 @@ const yesBtn=document.getElementById("yesBtn");
 const funny=document.getElementById("funny");
 
 const funnyText=[
+
 "😜 এত সহজে না!",
 "🤭 আরেকবার চেষ্টা করো!",
-"😂 Almost...",
-"🙈 আরেকটু চেষ্টা করো!",
-"❤️ Okay... Opening..."
+"😂 এখনও না!",
+"🙈 একটু আর চেষ্টা করো!",
+"❤️ ঠিক আছে... খুলছে!"
+
 ];
 
 let move=0;
 
 function moveButton(){
 
-if(move>=4) return;
+if(move>=4)return;
 
 let x=Math.random()*260-130;
-let y=Math.random()*150-75;
+let y=Math.random()*160-80;
 
 yesBtn.style.transform=`translate(${x}px,${y}px)`;
 
@@ -347,8 +324,11 @@ yesBtn.addEventListener("mouseenter",moveButton);
 yesBtn.addEventListener("touchstart",(e)=>{
 
 if(move<4){
+
 e.preventDefault();
+
 moveButton();
+
 }
 
 });
@@ -358,44 +338,27 @@ const typing=document.getElementById("typing");
 
 const letter=`
 
-My Dearest Thirtha ❤️
+আজ আমাদের প্রথম বিবাহবার্ষিকী...
 
-আজ আমাদের প্রথম বিবাহবার্ষিকী।
+৪ জুলাই ২০২৬...
 
-৪ জুলাই ২০২৫...
+হে আমার সবচেয়ে প্রিয় মানুষ,
 
-জানো...
-
-আমি Perfect Husband চাইনি।
-
-আমি শুধু এমন একজন মানুষ চেয়েছিলাম,
-
-যার পাশে আমি
-
-হাসতে পারি,
-
-কাঁদতে পারি,
-
-রাগ করতে পারি,
-
-আবার সব ভুলে জড়িয়ে ধরতে পারি। ❤️
-
-সেই মানুষটা তুমি...
+আমার Team Mate,
+আমার Safe Place,
+আমার হাসি, শান্তি আর ভরসার জায়গা। ❤️
 
 ধন্যবাদ...
 
-আমার জীবনে আসার জন্য।
+আমার পাশে থাকার জন্য।
+আমার মানুষ হওয়ার জন্য। ❤️
+আমাকে এতটা ভালোবাসার জন্য।
+আমার সব রাগ,
+অভিমান,
+অযৌক্তিক কান্না,
+সবকিছু ধৈর্য ধরে সহ্য করার জন্য।
 
-আমার বন্ধু হওয়ার জন্য।
-
-আমার Team Mate হওয়ার জন্য।
-
-আমার Safe Place হওয়ার জন্য।
-
-আমি প্রতিদিন নতুন করে
-তোমার প্রেমে পড়ি। ❤️
-
-Happy 1st Anniversary ❤️
+Happy First Anniversary, My Love. ❤️
 
 Forever Yours,
 
@@ -440,8 +403,6 @@ question.style.display="none";
 typeWriter();
 
 });
-<!-- ================= PART 3 ================= -->
-
 <style>
 
 .floatHeart{
@@ -467,7 +428,7 @@ opacity:0;
 .rose{
 position:fixed;
 top:-40px;
-font-size:22px;
+font-size:24px;
 pointer-events:none;
 animation:roseFall 8s linear forwards;
 z-index:998;
@@ -486,28 +447,35 @@ left:0;
 top:0;
 width:100%;
 height:100%;
-background:linear-gradient(135deg,#ffe4ea,#fff7f2);
 display:none;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+background:linear-gradient(135deg,#ffe4ea,#fff8f4);
 text-align:center;
 z-index:99999;
+padding:20px;
 }
 
 #finalScreen h1{
 font-family:'Dancing Script',cursive;
-font-size:70px;
+font-size:65px;
 color:#d6336c;
+margin-bottom:15px;
 }
 
 #finalScreen h2{
-margin-top:15px;
-font-size:34px;
+font-size:32px;
+margin-bottom:10px;
+}
+
+#finalScreen p{
+font-size:20px;
+margin-bottom:15px;
 }
 
 #gallery{
-margin-top:30px;
+margin-top:20px;
 }
 
 #slide{
@@ -515,8 +483,8 @@ width:280px;
 height:380px;
 object-fit:cover;
 border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.25);
-transition:.8s;
+box-shadow:0 12px 25px rgba(0,0,0,.25);
+transition:opacity .8s;
 }
 
 #musicBtn{
@@ -527,11 +495,11 @@ margin-top:25px;
 
 <div id="finalScreen">
 
-<h1>Happy Anniversary ❤️</h1>
+<h1>Happy 1st Anniversary ❤️</h1>
 
 <h2>Tohamoni ❤️ Thirtha</h2>
 
-<p>04 • 07 • 2025</p>
+<p>04 • 07 • 2026</p>
 
 <div id="gallery">
 
@@ -542,9 +510,7 @@ margin-top:25px;
 <button id="musicBtn">🎵 Play Music</button>
 
 <audio id="music" loop>
-
 <source src="music/song.mp3" type="audio/mpeg">
-
 </audio>
 
 </div>
@@ -567,6 +533,8 @@ h.innerHTML="❤️";
 
 h.style.left=Math.random()*100+"vw";
 
+h.style.fontSize=(18+Math.random()*24)+"px";
+
 document.body.appendChild(h);
 
 setTimeout(()=>{
@@ -577,7 +545,7 @@ h.remove();
 
 }
 
-setInterval(createHeart,500);
+setInterval(createHeart,450);
 
 function createRose(){
 
@@ -615,14 +583,16 @@ const photos=[
 ];
 
 let current=0;
+</div>
 
-setInterval(()=>{
+<script>
+  setInterval(()=>{
 
 const img=document.getElementById("slide");
 
-if(!img)return;
+if(!img) return;
 
-img.style.opacity=0;
+img.style.opacity="0";
 
 setTimeout(()=>{
 
@@ -630,7 +600,7 @@ current=(current+1)%photos.length;
 
 img.src=photos[current];
 
-img.style.opacity=1;
+img.style.opacity="1";
 
 },500);
 
@@ -656,431 +626,44 @@ musicBtn.innerHTML="🎵 Play Music";
 }
 
 };
-<style>
 
-.floatHeart{
-position:fixed;
-bottom:-40px;
-font-size:22px;
-pointer-events:none;
-animation:heartFly 6s linear forwards;
-z-index:999;
-}
+document.addEventListener("click",()=>{
 
-@keyframes heartFly{
-0%{
-transform:translateY(0) scale(.5);
-opacity:1;
-}
-100%{
-transform:translateY(-120vh) scale(1.8);
-opacity:0;
-}
-}
+music.play().catch(()=>{});
 
-.rose{
-position:fixed;
-top:-40px;
-font-size:24px;
-pointer-events:none;
-animation:roseFall 8s linear forwards;
-z-index:998;
-}
+},{once:true});
 
-@keyframes roseFall{
-100%{
-transform:translateY(120vh) rotate(720deg);
-opacity:.2;
-}
-}
+document.getElementById("finalScreen").addEventListener("click",()=>{
 
-#finalScreen{
-position:fixed;
-left:0;
-top:0;
-width:100%;
-height:100%;
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-background:linear-gradient(135deg,#ffe4ea,#fff7f2);
-z-index:99999;
-}
+for(let i=0;i<20;i++){
 
-#finalScreen h1{
-font-family:'Dancing Script',cursive;
-font-size:70px;
-color:#d6336c;
-}
-
-#finalScreen h2{
-margin-top:20px;
-font-size:34px;
-}
-
-#finalScreen p{
-margin-top:15px;
-font-size:22px;
-}
-
-#gallery{
-margin-top:30px;
-}
-
-#slide{
-width:280px;
-height:380px;
-border-radius:20px;
-object-fit:cover;
-box-shadow:0 10px 25px rgba(0,0,0,.25);
-transition:opacity .8s;
-}
-
-#musicBtn{
-position:fixed;
-right:20px;
-bottom:20px;
-z-index:999999;
-}
-
-</style>
-
-<div id="finalScreen">
-
-<h1>Happy Anniversary ❤️</h1>
-
-<h2>Tohamoni ❤️ Thirtha</h2>
-
-<p>04 • 07 • 2025</p>
-
-<div id="gallery">
-
-<img id="slide" src="images/1.jpg">
-
-</div>
-
-<button id="musicBtn">🎵 Play Music</button>
-
-<audio id="music" loop>
-
-<source src="music/song.mp3" type="audio/mpeg">
-
-</audio>
-
-</div>
-
-<script>
-
-function showFinalScreen(){
-
-document.getElementById("finalScreen").style.display="flex";
-
-}
-
-function createHeart(){
+setTimeout(()=>{
 
 let h=document.createElement("div");
 
 h.className="floatHeart";
 
-h.innerHTML="❤️";
+h.innerHTML=Math.random()>0.5?"❤️":"💖";
 
 h.style.left=Math.random()*100+"vw";
 
-document.body.appendChild(h);
-
-setTimeout(()=>h.remove(),6000);
-
-}
-
-setInterval(createHeart,500);
-
-function createRose(){
-
-let r=document.createElement("div");
-
-r.className="rose";
-
-r.innerHTML="🌹";
-
-r.style.left=Math.random()*100+"vw";
-
-document.body.appendChild(r);
-
-setTimeout(()=>r.remove(),8000);
-
-}
-
-setInterval(createRose,900);
-
-const photos=[
-"images/1.jpg",
-"images/2.jpg",
-"images/3.jpg",
-"images/4.jpg",
-"images/5.jpg",
-"images/6.jpg",
-"images/7.jpg",
-"images/8.jpg",
-"images/9.jpg",
-"images/10.jpg"
-];
-
-let photoIndex=0;
-
-setInterval(()=>{
-
-const img=document.getElementById("slide");
-
-if(!img) return;
-
-img.style.opacity=0;
-
-setTimeout(()=>{
-
-photoIndex=(photoIndex+1)%photos.length;
-
-img.src=photos[photoIndex];
-
-img.style.opacity=1;
-
-},500);
-
-},2500);
-
-const music=document.getElementById("music");
-const musicBtn=document.getElementById("musicBtn");
-
-musicBtn.onclick=function(){
-
-if(music.paused){
-
-music.play();
-
-musicBtn.innerHTML="⏸ Pause Music";
-
-}else{
-
-music.pause();
-
-musicBtn.innerHTML="🎵 Play Music";
-
-}
-
-};
-<style>
-
-.floatHeart{
-position:fixed;
-bottom:-40px;
-font-size:22px;
-pointer-events:none;
-animation:heartFly 6s linear forwards;
-z-index:999;
-}
-
-@keyframes heartFly{
-0%{
-transform:translateY(0) scale(.5);
-opacity:1;
-}
-100%{
-transform:translateY(-120vh) scale(1.8);
-opacity:0;
-}
-}
-
-.rose{
-position:fixed;
-top:-40px;
-font-size:24px;
-pointer-events:none;
-animation:roseFall 8s linear forwards;
-z-index:998;
-}
-
-@keyframes roseFall{
-100%{
-transform:translateY(120vh) rotate(720deg);
-opacity:.2;
-}
-}
-
-#finalScreen{
-position:fixed;
-left:0;
-top:0;
-width:100%;
-height:100%;
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-background:linear-gradient(135deg,#ffe4ea,#fff7f2);
-z-index:99999;
-}
-
-#finalScreen h1{
-font-family:'Dancing Script',cursive;
-font-size:70px;
-color:#d6336c;
-}
-
-#finalScreen h2{
-margin-top:20px;
-font-size:34px;
-}
-
-#finalScreen p{
-margin-top:15px;
-font-size:22px;
-}
-
-#gallery{
-margin-top:30px;
-}
-
-#slide{
-width:280px;
-height:380px;
-border-radius:20px;
-object-fit:cover;
-box-shadow:0 10px 25px rgba(0,0,0,.25);
-transition:opacity .8s;
-}
-
-#musicBtn{
-position:fixed;
-right:20px;
-bottom:20px;
-z-index:999999;
-}
-
-</style>
-
-<div id="finalScreen">
-
-<h1>Happy Anniversary ❤️</h1>
-
-<h2>Tohamoni ❤️ Thirtha</h2>
-
-<p>04 • 07 • 2025</p>
-
-<div id="gallery">
-
-<img id="slide" src="images/1.jpg">
-
-</div>
-
-<button id="musicBtn">🎵 Play Music</button>
-
-<audio id="music" loop>
-
-<source src="music/song.mp3" type="audio/mpeg">
-
-</audio>
-
-</div>
-
-<script>
-
-function showFinalScreen(){
-
-document.getElementById("finalScreen").style.display="flex";
-
-}
-
-function createHeart(){
-
-let h=document.createElement("div");
-
-h.className="floatHeart";
-
-h.innerHTML="❤️";
-
-h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(20+Math.random()*25)+"px";
 
 document.body.appendChild(h);
 
-setTimeout(()=>h.remove(),6000);
-
-}
-
-setInterval(createHeart,500);
-
-function createRose(){
-
-let r=document.createElement("div");
-
-r.className="rose";
-
-r.innerHTML="🌹";
-
-r.style.left=Math.random()*100+"vw";
-
-document.body.appendChild(r);
-
-setTimeout(()=>r.remove(),8000);
-
-}
-
-setInterval(createRose,900);
-
-const photos=[
-"images/1.jpg",
-"images/2.jpg",
-"images/3.jpg",
-"images/4.jpg",
-"images/5.jpg",
-"images/6.jpg",
-"images/7.jpg",
-"images/8.jpg",
-"images/9.jpg",
-"images/10.jpg"
-];
-
-let photoIndex=0;
-
-setInterval(()=>{
-
-const img=document.getElementById("slide");
-
-if(!img) return;
-
-img.style.opacity=0;
-
 setTimeout(()=>{
 
-photoIndex=(photoIndex+1)%photos.length;
+h.remove();
 
-img.src=photos[photoIndex];
+},6000);
 
-img.style.opacity=1;
-
-},500);
-
-},2500);
-
-const music=document.getElementById("music");
-const musicBtn=document.getElementById("musicBtn");
-
-musicBtn.onclick=function(){
-
-if(music.paused){
-
-music.play();
-
-musicBtn.innerHTML="⏸ Pause Music";
-
-}else{
-
-music.pause();
-
-musicBtn.innerHTML="🎵 Play Music";
+},i*120);
 
 }
 
-};
+});
+</script>
+
+</body>
+
+</html>
